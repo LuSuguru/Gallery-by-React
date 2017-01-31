@@ -23,14 +23,14 @@ imageDatas = ((imageDatasArr) => {
 /**
  * 获取区间内的一个随机值
  */
-function getRangeRandom(low, high) {
+const getRangeRandom = (low, high) => {
     return Math.ceil(Math.random() * (high - low) + low);
 };
 
 /**
  *  获取0~30之间的一个任意正负值
  */
-function get30DegRandom() {
+const get30DegRandom = () => {
     return ((Math.random() > 0.5 ? '' : '-') + Math.ceil(Math.random() * 30));
 };
 
@@ -90,9 +90,7 @@ class MainStage extends Component {
      * @return {function} 
      */
     center(index) {
-        return () => {
-            this.rearrange(index);
-        };
+        return () => { this.rearrange(index); };
     }
 
     /**

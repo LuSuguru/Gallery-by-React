@@ -17,12 +17,15 @@ class ImgFigure extends Component {
     }
 
     render() {
-        let styleObj = {};
+        let styleObj = {},
+            imgFigureClassName = 'img-figure';
+
+        const { imageURL, title, desc } = this.props.data,
+              { pos, rotate, isCenter } = this.props.arrange;
 
         //如果props属性中指定了这张图片的位置，则使用
-        if (this.props.arrange.pos) {
-            styleObj = this.props.arrange.pos;
-        };
+         pos && ( styleObj = this.props.arrange.pos );
+         isCenter && ( styleObj.zIndex = 11 );
 
         //设置图片的旋转角度
         if (this.props.arrange.rotate) {
@@ -31,14 +34,7 @@ class ImgFigure extends Component {
             })
         };
 
-        if (this.props.arrange.isCenter) {
-            styleObj.zIndex = 11;
-        }
-
-        let imgFigureClassName = 'img-figure';
         imgFigureClassName += this.props.arrange.isInverse ? ' is-inverse' : '';
-
-        const { imageURL, title, desc } = this.props.data;
 
         return ( 
             <figure className = { imgFigureClassName } style = { styleObj } onClick = { this.handleClick } >
