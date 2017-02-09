@@ -15,7 +15,7 @@ class ControllerUnit extends Component {
     }
 
     render() {
-        let controllerUnitClassName = "controller-unit";
+        let controllerUnitClassName = "controller-uit";
         const { isCenter, isInverse } = this.props.arrange;
 
         if (isCenter) { //如果是居中态的图片，显示控制按钮的居中态
