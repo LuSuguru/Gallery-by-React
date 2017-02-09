@@ -30,7 +30,7 @@ class ImgFigure extends Component {
         //设置图片的旋转角度
         if (this.props.arrange.rotate) {
             (['MozTransform', 'msTransform', 'WebkitTransform', 'transform']).forEach((value) => {
-                styleObj[value] = 'rotate(' + this.props.arrange.rotate + 'deg)';
+                styleObj[value] =`rotate(${this.props.arrange.rotate}deg)`;
             })
         };
 

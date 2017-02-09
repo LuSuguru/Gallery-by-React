@@ -14,7 +14,7 @@ var imageDatas = require('data/data.json');
 imageDatas = ((imageDatasArr) => {
     for (let i = 0, len = imageDatasArr.length; i < len; i++) {
         let singleImageData = imageDatasArr[i];
-        singleImageData.imageURL = require('images/' + singleImageData.fileName);
+        singleImageData.imageURL = require(`images/${singleImageData.fileName}`);
         imageDatasArr[i] = singleImageData;
     }
     return imageDatasArr;
@@ -224,7 +224,7 @@ class MainStage extends Component {
                     isCenter: false
                 };
             }
-            ImgFigures.push(<ImgFigure key={index} data={value} ref={'imgFigure' + index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)} />);
+            ImgFigures.push(<ImgFigure key={index} data={value} ref={`imgFigure${index}`} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)} />);
             ControllerUnits.push(<ControllerUnit key={index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)}/>);
         });
 
