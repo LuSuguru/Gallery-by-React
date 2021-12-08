@@ -1,17 +1,21 @@
 import { FC, useEffect, useRef, useState } from 'react'
+import ReactAudioPlayer from 'react-audio-player'
 
 import { getRangeRandom, get30DegRandom } from '@/utils'
 
 import imageDatas from '@/data/data.json'
+import music from '@/data/music.mp3'
 import { ImgData } from '@/types/data'
 
 import ImgFigure from '../ImgFigure'
 import ControlNav from '../ControlNav'
+
 import style from './style.module.less'
 
 const MainStage: FC = () => {
   const stageRef = useRef<HTMLDivElement>()
   const imageRef = useRef<HTMLDivElement>()
+  const audioRef = useRef<HTMLAudioElement>()
 
   const constantRef = useRef({ // 存储取值范围
     centerPos: { // 中间值的取值范围
@@ -143,6 +147,10 @@ const MainStage: FC = () => {
    * @param index 需要被居中的图片对应的图片数组的index值
    */
   const onMoveCenter = (index: number) => () => {
+    if (audioRef.current.paused) {
+      audioRef.current.play()
+    }
+
     rearrange(index)
   }
 
@@ -151,6 +159,10 @@ const MainStage: FC = () => {
  * @param index 输入当前被执行inverse操作的图片对应的图片信息数组的index值
  */
   const onInverse = (index: number) => () => {
+    if (audioRef.current.paused) {
+      audioRef.current.play()
+    }
+
     setImgData(imgData.map((item, i) => {
       if (i === index) {
         item.isInverse = !item.isInverse
@@ -190,6 +202,7 @@ const MainStage: FC = () => {
       <nav className={style.nav}>
         {ControlNavs}
       </nav>
+      <audio src={music} autoPlay ref={audioRef} />
     </section>
   )
 }
