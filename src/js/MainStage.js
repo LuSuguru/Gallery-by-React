@@ -19,16 +19,6 @@ imageDatas = ((imageDatasArr) => {
   return imageDatasArr
 })(imageDatas)
 
-/**
- * 获取区间内的一个随机值
- */
-const getRangeRandom = (low, high) => Math.ceil(Math.random() * (high - low) + low)
-
-/**
- *  获取0~30之间的一个任意正负值
- */
-const get30DegRandom = () => ((Math.random() > 0.5 ? '' : '-') + Math.ceil(Math.random() * 30))
-
 class MainStage extends Component {
   constructor(props) {
     super(props)
