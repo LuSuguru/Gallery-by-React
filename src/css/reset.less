@@ -1,0 +1,140 @@
+/* Base Application Styles */
+@font-face {
+  font-family: "icons-turn-arraw";
+  src: url("../fonts/icons/turn-arrow.eot") format("embedded-opentype"), url("../fonts/icons/turn-arrow.woff") format("woff"), url("../fonts/icons/turn-arrow.ttf") format("true-type"), url("../fonts/icons/turn-arrow.svg") format("svg");
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.ds-thread,
+.ds-thread * {
+  box-sizing: content-box;
+}
+
+html body {
+  font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  width: 100%;
+  height: 100%;
+  color: #222;
+  background: #222;
+  margin: 0;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p,
+body address,
+body ol,
+body ul,
+body dl,
+body dd,
+body blockquote,
+body pre,
+body figure {
+  margin: 0
+}
+
+input[type="text"],
+textarea {
+  border-width: 1px;
+  box-shadow: none;
+  -webkit-appearance: none;
+  resize: none;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  -webkit-appearance: none;
+}
+
+img {
+  border: 0;
+}
+
+table {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.clear {
+  clear: both;
+}
+
+input:-webkit-autofill {
+  background-color: none;
+  background-image: none;
+  box-shadow: 0 0 0px 1000px white inset;
+  color: #000;
+}
+
+button {
+  appearance: none;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.hidden {
+  display: none !important;
+}

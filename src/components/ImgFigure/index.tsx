@@ -38,13 +38,14 @@ export default forwardRef<HTMLDivElement, ImgFigureProps>((props, ref) => {
       onClick={onClick}
       style={styleObj}
       className={classnames(style.figure, { [style.isInverse]: isInverse })}>
-      <img src={require(`../../images/${fileName}`).default} alt={title} />
-      <figcaption>
-        <h2 className={style.title}>{title}</h2>
-        <div className={style.back} onClick={onClick}>
-          <p> {desc} </p>
-        </div>
-      </figcaption>
+      <div className={style.front} onClick={onClick}>
+        <img src={require(`../../images/${fileName}`).default} alt={title} />
+        <h2>{title}</h2>
+      </div>
+
+      <div className={style.back} onClick={onClick}>
+        <p>{desc}</p>
+      </div>
     </figure>
   )
 })
