@@ -202,7 +202,7 @@ const MainStage: FC = () => {
       <nav className={style.nav}>
         {ControlNavs}
       </nav>
-      <audio src={music} autoPlay ref={audioRef} />
+      <audio src={music} ref={audioRef} loop />
     </section>
   )
 }
